@@ -1,0 +1,12 @@
+---
+layout: base.njk
+---
+<article class="post">
+  <header class="post-head">
+    <p class="eyebrow">{{ category or "Journal" }}</p>
+    <h1>{{ title }}</h1>
+    <p class="date">{{ date | readableDate }}</p>
+  </header>
+  {% if cover %}<img class="hero" src="{{ cover }}" alt="{{ title }}">{% endif %}
+  <div class="prose">{{ content | safe }}</div>
+</article>

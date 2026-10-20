@@ -1,0 +1,24 @@
+---
+layout: base.njk
+title: Journal
+---
+<section class="intro">
+  <p class="eyebrow">WRITING · PHOTOGRAPHY · NOTES</p>
+  <h1>글과 사진으로 남기는<br>나의 기록.</h1>
+  <p>일상, 여행, 생각과 사진을 천천히 쌓아두는 개인 저널입니다.</p>
+</section>
+<section class="grid">
+{% for post in collections.posts | reverse %}
+  <article class="card">
+    <a href="{{ post.url }}">
+      {% if post.data.cover %}<img src="{{ post.data.cover }}" alt="{{ post.data.title }}">{% endif %}
+      <div class="card-body">
+        <p class="eyebrow">{{ post.data.category or "Journal" }}</p>
+        <h2>{{ post.data.title }}</h2>
+        {% if post.data.excerpt %}<p>{{ post.data.excerpt }}</p>{% endif %}
+        <time>{{ post.date | readableDate }}</time>
+      </div>
+    </a>
+  </article>
+{% endfor %}
+</section>

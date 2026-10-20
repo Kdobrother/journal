@@ -1,0 +1,33 @@
+# 1) Decap Turbo에서 사이트를 만든 뒤 아래 값을 발급받은 Site ID로 바꾸세요.
+backend:
+  name: turbo-github
+  turbo_site_id: REPLACE_WITH_YOUR_TURBO_SITE_ID
+  branch: main
+
+locale: ko
+media_folder: "src/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "posts"
+    label: "글"
+    label_singular: "글"
+    folder: "src/posts"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} · {{date}}"
+    fields:
+      - { label: "레이아웃", name: "layout", widget: "hidden", default: "post.njk" }
+      - { label: "태그", name: "tags", widget: "hidden", default: "posts" }
+      - { label: "제목", name: "title", widget: "string" }
+      - { label: "게시일", name: "date", widget: "datetime", time_format: false, format: "YYYY-MM-DD" }
+      - label: "분류"
+        name: "category"
+        widget: "select"
+        options: ["Essay", "Photography", "Travel", "Daily", "Notes"]
+        default: "Notes"
+      - { label: "짧은 소개", name: "excerpt", widget: "text", required: false }
+      - { label: "대표 사진", name: "cover", widget: "image", required: false }
+      - { label: "본문", name: "body", widget: "markdown" }

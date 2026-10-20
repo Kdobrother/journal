@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} · {% endif %}KDOB Journal</title>
+  <meta name="description" content="글과 사진을 기록하는 KDOB Journal">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">KDOB</a>
+    <nav>
+      <a href="/">Journal</a>
+      <a href="/admin/">Write</a>
+    </nav>
+  </header>
+  <main class="shell">{{ content | safe }}</main>
+  <footer class="site-footer">© KDOB Journal</footer>
+</body>
+</html>
