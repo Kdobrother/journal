@@ -1,7 +1,7 @@
 # 1) Decap Turbo에서 사이트를 만든 뒤 아래 값을 발급받은 Site ID로 바꾸세요.
 backend:
   name: turbo-github
-  turbo_site_id: REPLACE_WITH_YOUR_TURBO_SITE_ID
+  turbo_site_id: 28a68ea8-36f0-429c-94c6-9b273c1fe572
   branch: main
 
 locale: ko
