@@ -145,11 +145,11 @@ article p {
 }
 
 article img {
-  width: min(1100px, 92vw);
-  max-width: none;
-  margin: 34px 50%;
-  transform: translateX(-50%);
   display: block;
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  margin: 32px auto;
   border-radius: 4px;
 }
 
